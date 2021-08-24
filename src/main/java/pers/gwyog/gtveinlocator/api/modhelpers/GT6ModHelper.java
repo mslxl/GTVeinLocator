@@ -31,7 +31,7 @@ public class GT6ModHelper implements IGTModHelper {
             	UT.Crafting.shaped(new ItemStack(ModItems.itemVeinLocator), UT.Crafting.Bits.DEFAULT, new Object[]{
                     "SWS", "WwW", "SCS",
                     Character.valueOf('S'), OP.plate.dat(MT.Steel),
-                    Character.valueOf('W'), OP.cableGt01.dat(MT.Tin),
+                    Character.valueOf('W'), OP.cableGt01.dat(MT.Sn),
                     Character.valueOf('C'), OP.circuit.dat(MT.Basic)
                 });
         }
