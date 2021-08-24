@@ -1,9 +1,15 @@
 buildscript {
     repositories {
         mavenCentral()
+        jcenter()
+        //maven {
+        //	name = "forge"
+        //	url = "https://files.minecraftforge.net/maven"
+        //}
         maven {
-            name = "forge"
-            url = "http://files.minecraftforge.net/maven"
+            // forge maven now is unavailable, use gt instead.
+            name = "gt"
+            url = "https://gregtech.overminddl1.com/"
         }
         maven {
             name = "sonatype"
@@ -14,10 +20,16 @@ buildscript {
         classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
     }
 }
-
+repositories {
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
 apply plugin: 'forge'
 
 version = "1.7.10-1.0.7"
+
 group= "pers.gwyog.gtveinlocator"
 archivesBaseName = "gtveinlocator"
 
@@ -30,7 +42,20 @@ minecraft {
 }
 
 dependencies {
-    // pls add dependencies in /libs/ folder manually 
+    /*
+    pls add dependencies in /libs/ folder manually
+    some mod did not provide dev version, so maybe you need to deobf it by your own
+    Deobf tool:
+        Bon: https://github.com/tterrag1098/BON2/releases
+    Necessary deps:
+        IC2 Exp
+        GT5 Unofficial(You can download unofficial version instead)
+        GT6
+    Optional:
+        JourneyMap
+        XaeroMinimap
+     */
+    compileOnly  fileTree(include: ['*.jar'], dir: 'libs')
 }
 
 processResources
@@ -51,4 +76,9 @@ processResources
     from(sourceSets.main.resources.srcDirs) {
         exclude 'mcmod.info'
     }
+}
+
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '3.5.1'
 }
