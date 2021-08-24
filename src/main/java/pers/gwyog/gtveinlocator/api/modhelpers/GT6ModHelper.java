@@ -1,62 +1,18 @@
 package pers.gwyog.gtveinlocator.api.modhelpers;
 
-import java.lang.reflect.Field;
-import java.util.LinkedList;
-import java.util.List;
-
-import cpw.mods.fml.common.registry.GameRegistry;
 import gregapi.block.prefixblock.PrefixBlockTileEntity;
 import gregapi.data.CS;
-import gregapi.data.IL;
-import gregapi.data.MT;
-import gregapi.data.OP;
-import gregapi.util.UT;
 import gregapi.worldgen.GT6WorldGenerator;
 import gregapi.worldgen.WorldgenOresLarge;
-import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import pers.gwyog.gtveinlocator.ModItems;
-import pers.gwyog.gtveinlocator.config.ModConfig;
 import pers.gwyog.gtveinlocator.util.ClientVeinNameHelper;
 import pers.gwyog.gtveinlocator.util.GTOreLayerHelper;
 import pers.gwyog.gtveinlocator.util.GTVeinNameHelper;
 
-public class GT6ModHelper implements IGTModHelper {
+import java.util.LinkedList;
+import java.util.List;
 
-	@Override
-	public void registerItems() {
-        if (ModConfig.veinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemVeinLocator, "veinLocator");
-            if (!ModConfig.recipeVeinLocatorDisabled) 
-            	UT.Crafting.shaped(new ItemStack(ModItems.itemVeinLocator), UT.Crafting.Bits.DEFAULT, new Object[]{
-                    "SWS", "WwW", "SCS",
-                    Character.valueOf('S'), OP.plate.dat(MT.Steel),
-                    Character.valueOf('W'), OP.cableGt01.dat(MT.Sn),
-                    Character.valueOf('C'), OP.circuit.dat(MT.Basic)
-                });
-        }
-        if (ModConfig.advancedVeinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemAdvancedVeinLocator, "advancedVeinLocator");
-            if (!ModConfig.recipeAdvancedVeinLocatorDisabled)
-            	UT.Crafting.shaped(new ItemStack(ModItems.itemAdvancedVeinLocator), UT.Crafting.Bits.DEFAULT, new Object[]{
-                    "AWA", "WwW", "ACA",
-                    Character.valueOf('A'), OP.plate.dat(MT.Aluminium),
-                    Character.valueOf('W'), OP.cableGt02.dat(MT.Copper),
-                    Character.valueOf('C'), OP.circuit.dat(MT.Good)
-                });
-        }
-        if (ModConfig.eliteVeinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemEliteVeinLocator, "eliteVeinLocator");
-            if (!ModConfig.recipeEliteVeinLocatorDisabled)
-            	UT.Crafting.shaped(new ItemStack(ModItems.itemEliteVeinLocator), UT.Crafting.Bits.DEFAULT, new Object[]{
-                        "STS", "WwW", "SCS",
-                        Character.valueOf('S'), OP.plate.dat(MT.StainlessSteel),
-                        Character.valueOf('T'), IL.SENSORS[3].get(1L, new Object[0]),
-                        Character.valueOf('W'), OP.cableGt04.dat(MT.Silver),
-                        Character.valueOf('C'), OP.circuit.dat(MT.Advanced)
-                    });
-        }
-	}
+public class GT6ModHelper implements IGTModHelper {
 
 	@Override
 	public void initClientVeinNameHelper() {      

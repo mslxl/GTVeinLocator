@@ -1,18 +1,6 @@
 package pers.gwyog.gtveinlocator.api.modhelpers;
 
-import java.lang.reflect.Field;
-import java.util.LinkedList;
-import java.util.List;
-
 import cpw.mods.fml.common.registry.GameRegistry;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-import pers.gwyog.gtveinlocator.GTVeinLocator;
-import pers.gwyog.gtveinlocator.ModItems;
-import pers.gwyog.gtveinlocator.config.ModConfig;
-import pers.gwyog.gtveinlocator.util.ClientVeinNameHelper;
-import pers.gwyog.gtveinlocator.util.GTOreLayerHelper;
-import pers.gwyog.gtveinlocator.util.GTVeinNameHelper;
 import gregtech.api.enums.ItemList;
 import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
@@ -20,44 +8,20 @@ import gregtech.api.util.GT_ModHandler;
 import gregtech.api.util.GT_OreDictUnificator;
 import gregtech.common.GT_Worldgen_GT_Ore_Layer;
 import gregtech.common.blocks.GT_TileEntity_Ores;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
+import pers.gwyog.gtveinlocator.config.ModConfig;
+import pers.gwyog.gtveinlocator.util.ClientVeinNameHelper;
+import pers.gwyog.gtveinlocator.util.GTOreLayerHelper;
+import pers.gwyog.gtveinlocator.util.GTVeinNameHelper;
+
+import java.lang.reflect.Field;
+import java.util.LinkedList;
+import java.util.List;
 
 
 public class GT5ModHelper implements IGTModHelper {
 	
-	@Override
-	public void registerItems() {
-        if (ModConfig.veinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemVeinLocator, "veinLocator");
-            if (!ModConfig.recipeVeinLocatorDisabled) 
-            	GT_ModHandler.addCraftingRecipe(new ItemStack(ModItems.itemVeinLocator), GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE, new Object[]{
-                    "SWS", "WwW", "SCS",
-                    Character.valueOf('S'), OrePrefixes.plate.get(Materials.Steel),
-                    Character.valueOf('W'), GT_OreDictUnificator.get(OrePrefixes.cableGt01, Materials.Tin, 1L),
-                    Character.valueOf('C'), OrePrefixes.circuit.get(Materials.Basic)
-                });
-        }
-        if (ModConfig.advancedVeinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemAdvancedVeinLocator, "advancedVeinLocator");
-            if (!ModConfig.recipeAdvancedVeinLocatorDisabled)
-                GT_ModHandler.addCraftingRecipe(new ItemStack(ModItems.itemAdvancedVeinLocator), GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE, new Object[]{
-                    "AWA", "WwW", "ACA",
-                    Character.valueOf('A'), OrePrefixes.plate.get(Materials.Aluminium),
-                    Character.valueOf('W'), GT_OreDictUnificator.get(OrePrefixes.cableGt02, Materials.AnyCopper, 1L),
-                    Character.valueOf('C'), OrePrefixes.circuit.get(Materials.Good)
-                });
-        }
-        if (ModConfig.eliteVeinLocatorEnabled) {
-            GameRegistry.registerItem(ModItems.itemEliteVeinLocator, "eliteVeinLocator");
-            if (!ModConfig.recipeEliteVeinLocatorDisabled)
-                GT_ModHandler.addCraftingRecipe(new ItemStack(ModItems.itemEliteVeinLocator), GT_ModHandler.RecipeBits.NOT_REMOVABLE | GT_ModHandler.RecipeBits.REVERSIBLE, new Object[]{
-                        "STS", "WwW", "SCS",
-                        Character.valueOf('S'), OrePrefixes.plate.get(Materials.StainlessSteel),
-                        Character.valueOf('T'), ItemList.Sensor_HV.get(1L, new Object[0]),
-                        Character.valueOf('W'), GT_OreDictUnificator.get(OrePrefixes.cableGt04, Materials.Silver, 1L),
-                        Character.valueOf('C'), OrePrefixes.circuit.get(Materials.Advanced)
-                    });
-        }
-	}
 
 	@Override
 	public void initClientVeinNameHelper() {
