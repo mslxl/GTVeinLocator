@@ -1,6 +1,6 @@
 # GT Vein Locator - Cheat
 
-ATTENTION, This is a cheat and unofficial mod!
+**ATTENTION, This is a cheat and unofficial mod!**
 
 This minecraft forge mod is an addon for GregTech5/6 with the aiming of save time of search ore for time-tense gamer.
 
@@ -8,10 +8,11 @@ It only adds a command `/gtore`, which can search range 5x5 and add the result t
 
 In addition, to make it can be detected by anti-cheating mod, the MODID of this mod was set to `xray`. Also, to use this mod, you need install it both on client and server.
 
+If you are playing GregTech version before 5.09.29 or playing GT New Horizons, set `matchMisplacement` to true in xray.cfg.
+
 ### Download  
 
-You can download the cheating version on GitHub releases page. Also, you can download the official original version, which is only released on two **Chinese** minecraft forum: [Baidu Post Bar](https://tieba.baidu.com/p/4824046444) and [MCBBS](http://mcbbs.tvt.im/forum.php?mod=viewthread&tid=645107).  
-You can find the download link there, or simply download it [here](http://pan.baidu.com/s/1hs5DB3e).  
+You can download the cheating version on GitHub releases page. Also, you can download the official original version, which is only released on two **Chinese** minecraft forum: [Baidu Post Bar](https://tieba.baidu.com/p/4824046444) and [MCBBS](http://mcbbs.tvt.im/forum.php?mod=viewthread&tid=645107). You can find the download link there, or simply download it [here](http://pan.baidu.com/s/1hs5DB3e).  
 This download link is from a Chinese NetDisk FYI.
 
 ### Build

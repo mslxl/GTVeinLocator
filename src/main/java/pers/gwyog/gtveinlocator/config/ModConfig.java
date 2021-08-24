@@ -36,13 +36,8 @@ public class ModConfig {
          logger.info("Started loading config.");           
          config.load();
          
-         config.addCustomCategoryComment("Locator Enabled", "You can set if specific locator is enabled or whether it consumes energy when using.");
-         config.addCustomCategoryComment("Locator Use Energy", "You can configure a setting here to make the mod in an esay mode.");
          config.addCustomCategoryComment("Locator Data", "You can set the basic data of the vein locators of different levels to balance them.");
          config.addCustomCategoryComment("Compatibility", "Things that are related with other mods can be configured here.");
-         config.addCustomCategoryComment("Loot Tweaks", "You can set if the locators would generate in the loot chests and the possibility to find them.\nTips: The basic name of the chests are: \n    mineshaftCorridor, pyramidDesertyChest, pyramidJungleChest, pyramidJungleDispenser \n    strongholdCorridor, strongholdLibrary, strongholdCrossing, villageBlacksmith \n    bonusChest, dungeonChest \nNote: If you want to make specific locator appear in multiple kinds of loot-chests, you should use MineTweaker.");
-         config.addCustomCategoryComment("Recipe Disabled", "You can disable the recipe of specific locator here.");
-         config.addCustomCategoryComment("Creative Tab Icon", "For those whose client crashes everytime switching to GTVL's creative tab, you can now change the icon to minecraft's compass to avoid crashing.");
          config.addCustomCategoryComment("Dimension White List", "Elite locator will only function in these dimensions and GalactiCraft's planets. This catagory aims mainly at compatibility for bukkit plugins like Multiverse-Core.");
          
 
