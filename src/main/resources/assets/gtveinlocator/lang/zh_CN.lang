@@ -1,4 +1,4 @@
-﻿#items
+#items
 item.gtveinlocator.veinLocator.name=GT矿脉定位器
 item.gtveinlocator.advancedVeinLocator.name=高级GT矿脉定位器
 item.gtveinlocator.eliteVeinLocator.name=精英GT矿脉定位器
@@ -55,6 +55,12 @@ gtveinlocator.ore.mix.lapis=青金石
 gtveinlocator.ore.mix.beryllium=铍
 gtveinlocator.ore.mix.oilsand=油砂
 
+#gtnh
+gtveinlocator.ore.mix.garnettin=石榴石
+gtveinlocator.ore.mix.mineralsand=玄武岩
+gtveinlocator.ore.mix.kaolinitezeolite=高岭土
+gtveinlocator.ore.mix.mica=云母
+gtveinlocator.ore.mix.coppertin=黄铜
 #additional vein names for gt6
 gtveinlocator.ore.mix.adamantium=艾德曼合金
 gtveinlocator.ore.mix.iodinesalt=碘盐
@@ -63,6 +69,3 @@ gtveinlocator.ore.mix.asbestos=石棉
 gtveinlocator.ore.mix.titanium=钛
 gtveinlocator.ore.mix.garnet=石榴石
 gtveinlocator.ore.mix.dolamide=Dolamide
-
-#creative tabs
-itemGroup.GTVeinLocator=格雷科技矿脉定位器

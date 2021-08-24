@@ -63,7 +63,7 @@ public class GTVeinLocator {
         } catch (ClassNotFoundException e) {
         }
         gtModHelper = GTVersion.equals("GT6") ? new GT6ModHelper() : new GT5ModHelper();
-        gtModHelper = new GT5ModHelper();
+//        gtModHelper = new GT5ModHelper();
     }
 
 }

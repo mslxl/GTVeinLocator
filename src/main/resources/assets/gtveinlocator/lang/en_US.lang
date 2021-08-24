@@ -14,11 +14,13 @@ chat.gtveinlocator.info2=Found %1$d veins in %2$d*%3$d area, the waypoints have 
 chat.gtveinlocator.found_info=Found veins: %s
 
 #mod compat messages
+
 modcompat.gtveinlocator.oldversion_gt.info=Gregtech's version may be out-of-date, please update it first before reporting the bug.
 modcompat.gtveinlocator.no_minimap.info=Found no compatible minimap mod, please install one before using this item. 
 modcompat.gtveinlocator.oldversion_minimap.info=Failed to add compatibility for %s, please update this mod first before reporting the bug. 
 
 #vein names
+
 gtveinlocator.ore.mix.empty=Empty
 gtveinlocator.ore.mix.unknown=Unknown
 gtveinlocator.ore.mix.naquadah=Naquadah
@@ -54,7 +56,12 @@ gtveinlocator.ore.mix.galena=Galena
 gtveinlocator.ore.mix.lapis=Lapis
 gtveinlocator.ore.mix.beryllium=Beryllium
 gtveinlocator.ore.mix.oilsand=Oilsand
-
+#gtnh
+gtveinlocator.ore.mix.garnettin=Garnettin
+gtveinlocator.ore.mix.kaolinitezeolite=Kaolinitez
+gtveinlocator.ore.mix.mineralsand=Mineral Sand
+gtveinlocator.ore.mix.coppertin=Coppertin
+gtveinlocator.ore.mix.mica=Mica
 #additional vein names for gt6
 gtveinlocator.ore.mix.adamantium=Adamantium
 gtveinlocator.ore.mix.iodinesalt=Iodinesalt
@@ -63,6 +70,3 @@ gtveinlocator.ore.mix.asbestos=Asbestos
 gtveinlocator.ore.mix.titanium=Titanium
 gtveinlocator.ore.mix.garnet=Garnet
 gtveinlocator.ore.mix.dolamide=Dolamide
-
-#creative tab
-itemGroup.GTVeinLocator=GregTech Vein-Locator
