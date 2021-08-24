@@ -14,38 +14,38 @@ import pers.gwyog.gtveinlocator.api.modhelpers.GT5ModHelper;
 import pers.gwyog.gtveinlocator.api.modhelpers.GT6ModHelper;
 import pers.gwyog.gtveinlocator.api.modhelpers.IGTModHelper;
 
-@Mod(modid = GTVeinLocator.MODID, name = GTVeinLocator.MODNAME, version = GTVeinLocator.VERSION, dependencies = "required-after:gregtech")
-public class GTVeinLocator {    
+@Mod(modid = GTVeinLocator.MODID, name = GTVeinLocator.MODNAME, version = GTVeinLocator.VERSION, dependencies = "required-after:gregtech", acceptableRemoteVersions = "*")
+public class GTVeinLocator {
     public static final String MODID = "xray";
     public static final String MODNAME = "GT Vein-Locator Cheat";
     public static final String VERSION = "v1.0.7";
-    public static IGTModHelper gtModHelper; 
-    
+    public static IGTModHelper gtModHelper;
+
     // default is GT5, it will become "GT6" when GT6 is installed
     public static String GTVersion = "GT5";
-    
-    @SidedProxy(clientSide="pers.gwyog.gtveinlocator.proxies.ClientProxy", serverSide="pers.gwyog.gtveinlocator.proxies.ServerProxy")
+
+    @SidedProxy(clientSide = "pers.gwyog.gtveinlocator.proxies.ClientProxy", serverSide = "pers.gwyog.gtveinlocator.proxies.ServerProxy")
     public static CommonProxy proxy;
-    
+
     @Mod.Instance(MODID)
     public static GTVeinLocator instance;
-    
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent e) {
-    	initGTHelper();
+        initGTHelper();
         this.proxy.preInit(e);
     }
-    
+
     @EventHandler
     public void init(FMLInitializationEvent e) {
         this.proxy.init(e);
     }
-    
+
     @EventHandler
     public void postInit(FMLPostInitializationEvent e) {
         this.proxy.postInit(e);
     }
-    
+
     @EventHandler
     public void onServerStart(FMLServerStartedEvent e) {
         this.proxy.onServerStart(e);
@@ -60,9 +60,10 @@ public class GTVeinLocator {
         try {
             Class clazzGT6API = Class.forName("gregapi.GT_API");
             GTVersion = "GT6";
-        } catch (ClassNotFoundException e) {}
+        } catch (ClassNotFoundException e) {
+        }
         gtModHelper = GTVersion.equals("GT6") ? new GT6ModHelper() : new GT5ModHelper();
-        gtModHelper =  new GT5ModHelper();
+        gtModHelper = new GT5ModHelper();
     }
-    
+
 }
